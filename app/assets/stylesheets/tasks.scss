@@ -1,0 +1,84 @@
+$beige : #EAC8A3;
+$grey : #CDCDCD;
+
+a, .link {
+  text-decoration: none;
+  text-align: center;
+}
+
+h1, h2, p, a, .link {
+  font-family: 'helvetica';
+  color: $grey;
+  text-align: center;
+}
+
+h1:hover, h2:hover, p:hover, a:hover, .link:hover {
+  color: $beige;
+}
+
+a:hover {
+  text-shadow: 2px 2px 10px $grey;
+}
+
+// .form {
+//   list-style-type: none;
+//   display:flex;
+//   justify-content: center;
+//   padding: 20px;
+// }
+
+// // li {
+// //   background-color: $grey;
+// //   color: white;
+// //   padding: 15px;
+// //   font-size: 40px;
+// //   margin: 15px;
+// // }
+
+// // li:hover {
+// //   background-color: $beige;
+// // }
+
+.btd {
+  color: $grey;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid $beige;
+  box-shadow: 2px 2px 10px $grey;
+  margin: 10px auto;
+  width: 100px;
+}
+
+.btd:hover {
+  opacity: 0.9;
+  border: 1px solid $beige;
+  box-shadow: 2px 2px 10px $beige;
+  text-decoration: none;
+  background: white;
+  color: $beige;
+}
+
+.form-control {
+  box-shadow: 2px 2px 10px $grey;
+  color: $beige;
+}
+
+.form-control:focus {
+  box-shadow: 2px 2px 10px $beige !important;
+  color: $grey;
+  outline: none !important;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.formy {
+  display:flex;
+  width: 600px;
+  font-family: 'helvetica';
+  margin: 40px auto;
+  padding: 20px;
+  color: $grey;
+}
