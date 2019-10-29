@@ -1,10 +1,10 @@
 <h1>My Tasks</h1>
 <% @tasks.each do |task| %>
   <h2>
-    <%=check_box_tag('task', 'task.completed', task.completed, disabled: true )%>
-    <%= link_to task.title, show_path(task) %> </h2>
+    <%= link_to task.title, task_path(task) %>
+    <%= task.completed ? "✅" : "⚠️" %> </h2>
     <div class="link btd">
-    <%= link_to "Delete", show_path(task),
+    <%= link_to "Delete", task_path(task),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
     </div>

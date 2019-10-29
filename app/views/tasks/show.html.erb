@@ -1,18 +1,17 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
 <p>
-  <%=check_box_tag('@task', '@task.completed', @task.completed, disabled: true )%>
-  <% if @task.completed == true %>
-      Task completed !
-  <% else%>
-      Task still to be completed.
-  <%end%>
+  <% if @task.completed %>
+    ✅ Completed !
+  <% else %>
+    ⚠️ To Do
+  <% end %>
 </p>
 <div class="link btd">
-<%= link_to 'Edit post', edit_path %> </h2>
+<%= link_to 'Edit task', edit_path %> </h2>
 </div>
 <div class="link btd">
-<%= link_to "Delete", delete_path(@task),
+<%= link_to "Delete task", task_path(@task),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
 </div>

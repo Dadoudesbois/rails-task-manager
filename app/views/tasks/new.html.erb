@@ -1,16 +1,1 @@
-<div class="formy">
-  <%= form_for(@task) do |f| %>
-    <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :details %>
-      <%= f.text_field :details, class: 'form-control' %>
-    </div>
-
-    <%= f.submit class: 'btn btd btn-primary' %>
-  <%= link_to 'Back to tasks list', tasks_path %> </h2>
-    <% end %>
-</div>
+<%= render 'form' %>

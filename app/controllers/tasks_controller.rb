@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
+  before_action :find_task, only: [:show, :update, :edit, :destroy]
   def index
     @tasks = Task.all
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def new
@@ -14,26 +14,28 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.save
-    redirect_to show_path(@task)
+    ## or simply : Task.create(task_params) which saves automatically
+    redirect_to task_path(@task)
   end
 
   def update
-    @task = Task.find(params[:id])
     @task.update(task_params)
     redirect_to tasks_path(@task)
   end
 
   def edit
-    @restaurant = Restaurant.find(params[:id])
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
     redirect_to tasks_path
   end
 
   private
+
+  def find_task
+    @task = Task.find(params[:id])
+  end
 
   def task_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
